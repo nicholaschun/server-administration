@@ -1,5 +1,8 @@
-BACKUP_FILE="filename.sql"
-DATABASE_NAME="database-name"
+# Re
+TIME=$(date --utc "+%Y%m%d_%H%M%SZ")
+
+BACKUP_FILE="filename_$(TIME).sql"
+DATABASE_NAME="<database-name>"
 
 # Dump sql dump on server
 pg_dump $DATABASE_NAME -U $DATABASE_NAME --format=plain > $BACKUP_FILE
